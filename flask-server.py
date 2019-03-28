@@ -26,23 +26,6 @@ def main():
 
     return summarize(sentence_ranks, sentence_tokens, lines)
 
-def parse_arguments():
-    """ Parse command line arguments """
-    parser = argparse.ArgumentParser()
-    parser.add_argument('filepath', help='File name of text to summarize')
-    parser.add_argument('-l', '--length', default=4, help='Number of sentences to return')
-    args = parser.parse_args()
-
-    return args
-
-def read_file(path):
-    """ Read the file at designated path and throw exception if unable to do so """
-    try:
-        with open(path, 'r') as file:
-            return file.read()
-
-    except IOError as e:
-        print("Fatal Error: File ({}) could not be locaeted or is not readable.".format(path))
 
 def sanitize_input(data):
     """
